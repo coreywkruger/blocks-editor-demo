@@ -1,8 +1,3 @@
-.medium-editor-anchor-preview, .medium-editor-toolbar {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  z-index: 2000; }
-
 @-webkit-keyframes medium-editor-image-loading {
   0% {
     -webkit-transform: scale(0);
@@ -54,6 +49,8 @@
     transform: matrix(1, 0, 0, 1, 0, 0); } }
 
 .medium-editor-anchor-preview {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
   left: 0;
   line-height: 1.4;
   max-width: 280px;
@@ -62,19 +59,13 @@
   top: 0;
   word-break: break-all;
   word-wrap: break-word;
-  visibility: hidden; }
+  visibility: hidden;
+  z-index: 2000; }
 
 .medium-editor-anchor-preview a {
   color: #fff;
   display: inline-block;
   margin: 5px 5px 10px; }
-
-.medium-editor-placeholder-relative:after, .medium-editor-placeholder:after {
-  content: attr(data-placeholder) !important;
-  white-space: pre;
-  padding: inherit;
-  margin: inherit;
-  font-style: italic; }
 
 .medium-editor-anchor-preview-active {
   visibility: visible; }
@@ -95,14 +86,27 @@
   position: relative; }
 
 .medium-editor-placeholder:after {
+  content: attr(data-placeholder) !important;
+  font-style: italic;
   position: absolute;
   left: 0;
-  top: 0; }
+  top: 0;
+  white-space: pre;
+  padding: inherit;
+  margin: inherit; }
 
-.medium-editor-placeholder-relative, .medium-editor-placeholder-relative:after {
+.medium-editor-placeholder-relative {
   position: relative; }
 
-.medium-toolbar-arrow-over:before, .medium-toolbar-arrow-under:after {
+.medium-editor-placeholder-relative:after {
+  content: attr(data-placeholder) !important;
+  font-style: italic;
+  position: relative;
+  white-space: pre;
+  padding: inherit;
+  margin: inherit; }
+
+.medium-toolbar-arrow-under:after, .medium-toolbar-arrow-over:before {
   border-style: solid;
   content: '';
   display: block;
@@ -113,17 +117,20 @@
   width: 0; }
 
 .medium-toolbar-arrow-under:after {
-  border-width: 8px 8px 0; }
+  border-width: 8px 8px 0 8px; }
 
 .medium-toolbar-arrow-over:before {
-  border-width: 0 8px 8px;
+  border-width: 0 8px 8px 8px;
   top: -8px; }
 
 .medium-editor-toolbar {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
   left: 0;
   position: absolute;
   top: 0;
-  visibility: hidden; }
+  visibility: hidden;
+  z-index: 2000; }
 
 .medium-editor-toolbar ul {
   margin: 0;
@@ -146,13 +153,13 @@
   text-decoration: none; }
 
 .medium-editor-toolbar li button:focus {
-  outline: 0; }
+  outline: none; }
 
 .medium-editor-toolbar li .medium-editor-action-underline {
   text-decoration: underline; }
 
 .medium-editor-toolbar li .medium-editor-action-pre {
-  font-family: Consolas,"Liberation Mono",Menlo,Courier,monospace;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: 12px;
   font-weight: 100;
   padding: 15px 0; }
@@ -180,15 +187,17 @@
 .medium-editor-toolbar-form {
   display: none; }
 
-.medium-editor-toolbar-form a, .medium-editor-toolbar-form input {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif; }
+.medium-editor-toolbar-form input,
+.medium-editor-toolbar-form a {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
 
 .medium-editor-toolbar-form .medium-editor-toolbar-form-row {
   line-height: 14px;
   margin-left: 5px;
   padding-bottom: 5px; }
 
-.medium-editor-toolbar-form .medium-editor-toolbar-input, .medium-editor-toolbar-form label {
+.medium-editor-toolbar-form .medium-editor-toolbar-input,
+.medium-editor-toolbar-form label {
   border: none;
   box-sizing: border-box;
   font-size: 14px;
@@ -197,7 +206,8 @@
   width: 316px;
   display: inline-block; }
 
-.medium-editor-toolbar-form .medium-editor-toolbar-input:focus, .medium-editor-toolbar-form label:focus {
+.medium-editor-toolbar-form .medium-editor-toolbar-input:focus,
+.medium-editor-toolbar-form label:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -235,6 +245,97 @@
 
 .medium-editor-hidden {
   display: none; }
+
+.medium-toolbar-arrow-under:after {
+  border-color: #000 transparent transparent transparent;
+  top: 40px; }
+
+.medium-toolbar-arrow-over:before {
+  border-color: transparent transparent #000 transparent; }
+
+.medium-editor-toolbar {
+  background-color: #000;
+  border: none;
+  border-radius: 50px; }
+
+.medium-editor-toolbar li button {
+  background-color: transparent;
+  border: none;
+  box-sizing: border-box;
+  color: #ccc;
+  height: 40px;
+  min-width: 40px;
+  padding: 5px 12px;
+  -webkit-transition: background-color .2s ease-in, color .2s ease-in;
+  transition: background-color .2s ease-in, color .2s ease-in; }
+
+.medium-editor-toolbar li button:hover {
+  background-color: #000;
+  color: #a2d7c7; }
+
+.medium-editor-toolbar li .medium-editor-button-first {
+  border-bottom-left-radius: 50px;
+  border-top-left-radius: 50px;
+  padding-left: 24px; }
+
+.medium-editor-toolbar li .medium-editor-button-last {
+  border-bottom-right-radius: 50px;
+  border-right: none;
+  border-top-right-radius: 50px;
+  padding-right: 24px; }
+
+.medium-editor-toolbar li .medium-editor-button-active {
+  background-color: #000;
+  color: #a2d7c7; }
+
+.medium-editor-toolbar-form {
+  background: #000;
+  border-radius: 50px;
+  color: #ccc;
+  overflow: hidden; }
+
+.medium-editor-toolbar-form .medium-editor-toolbar-input {
+  background: #000;
+  box-sizing: border-box;
+  color: #ccc;
+  height: 40px;
+  padding-left: 16px;
+  width: 220px; }
+
+.medium-editor-toolbar-form .medium-editor-toolbar-input::-webkit-input-placeholder {
+  color: #f8f5f3;
+  color: rgba(248, 245, 243, 0.8); }
+
+.medium-editor-toolbar-form .medium-editor-toolbar-input:-moz-placeholder {
+  /* Firefox 18- */
+  color: #f8f5f3;
+  color: rgba(248, 245, 243, 0.8); }
+
+.medium-editor-toolbar-form .medium-editor-toolbar-input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #f8f5f3;
+  color: rgba(248, 245, 243, 0.8); }
+
+.medium-editor-toolbar-form .medium-editor-toolbar-input:-ms-input-placeholder {
+  color: #f8f5f3;
+  color: rgba(248, 245, 243, 0.8); }
+
+.medium-editor-toolbar-form a {
+  color: #ccc;
+  -webkit-transform: translateY(2px);
+  transform: translateY(2px); }
+
+.medium-editor-toolbar-form .medium-editor-toolbar-close {
+  margin-right: 16px; }
+
+.medium-editor-toolbar-anchor-preview {
+  background: #000;
+  border-radius: 50px;
+  padding: 5px 12px; }
+
+.medium-editor-anchor-preview a {
+  color: #ccc;
+  text-decoration: none; }
 
 /* RESET */
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4,
