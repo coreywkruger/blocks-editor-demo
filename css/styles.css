@@ -340,9 +340,6 @@
 .region-hover {
   outline: 2px solid #c00; }
 
-body {
-  margin: 0; }
-
 .editor-header {
   /* From Core */
   -webkit-box-sizing: border-box;
@@ -386,6 +383,7 @@ body {
   transition: all 200ms ease; }
 
 .editor-header .options {
+  margin: 15px;
   position: absolute;
   top: 9px;
   right: 60px;
@@ -653,8 +651,8 @@ b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table,
 caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details,
 embed, figure, figcaption, footer, header, hgroup, menu, nav, output,
 ruby, section, summary, time, mark, audio, video {
-  /*margin: 0;*/
-  /*padding: 0;*/
+  margin: 0;
+  padding: 0;
   /*border: 0;*/
   /*font-size: 100%;*/
   /*font: inherit;*/
@@ -1023,6 +1021,10 @@ section.account .copy_link {
 /* Dashboard email management */
 section.template {
   margin-bottom: 10px; }
+
+secion.template header .template-options {
+  margin: 0;
+  padding: 0; }
 
 section.template header .pin {
   position: absolute;
