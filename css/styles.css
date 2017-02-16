@@ -341,7 +341,7 @@
   outline: 2px solid #c00; }
 
 .export-overlay {
-  /*display: none;  Hidden by default */
+  display: none;
   position: fixed;
   /* Stay in place */
   z-index: 1;
@@ -360,7 +360,7 @@
   /* Black w/ opacity */ }
 
 .export-modal {
-  /*display: none;*/
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -971,7 +971,7 @@ header#global #profile .profileoptions:before, header#global .profile-toggle .pr
 
 /* Lightboxes */
 #lightbox {
-  display: none;
+  /*display: none;*/
   position: fixed;
   z-index: 100;
   top: 0;
@@ -994,7 +994,7 @@ header#global #profile .profileoptions:before, header#global .profile-toggle .pr
   font-size: 30px; }
 
 .lightboxwindow {
-  display: none;
+  /*display: none;*/
   position: fixed;
   top: 50%;
   left: 50%;
